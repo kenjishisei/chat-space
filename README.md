@@ -24,7 +24,7 @@
 |name|string|
 
 
-|アソシエーション|
+|association|
 |:--|
 |users has_many : tweets|
 |tweets belongs_to :users|
