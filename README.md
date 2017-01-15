@@ -1,40 +1,69 @@
 # user
-1. name
-2. e_mail
+- name
+ - e_mail
+ -password
 
-# tweet
-1. body
-2. image
-3. user_id
-4. group_id
+# message
+ - body
+  - image
+  - user_id
+ - group_id
 
-# group_users
-1. user_id
-2. group_id
+# group_user
+- user_id
+ - group_id
 
-# chat_groups
-1. name
+# chat_group
+ - name
 
-|column|type|
-|:--|--:|
-|body|text|
-|image|string|
-|group_id|integer|
-|user_id|integer|
-|name|string|
+# 制約
 
+## user
 
-|アソシエーション|
-|:--|
-|users has_many : tweets|
-|tweets belongs_to :users|
-|chat_group has_many : tweets|
-|tweets belongs_to : chat_group|
-|users has_many : chat_group|
-|chat_group belongs_to :users|
+|column|type|key|
+|:--|--:|:--:|
+|name|string|null: false, add_index|
+|e_mail|string |null: false, unique: true|
+|password|string|null: false|
 
-|制約|
-|:--|
-|t.string :mail, null: false|
-|add_column :users, :e_mail, :string|
-|add_index :users, :e_mail, unique: true|
+## message
+
+|column|type|key|
+|:--|--:|:--:|
+|body|text|null: false|
+|image|string||
+|group_id|integer|null: false,foreigin_key: true|
+|user_id|integer|null: false,foreigin_key: true|
+
+## group_user
+
+|column|type|key|
+|:--|--:|:--:|
+|user_id|integer|null: false,foreigin_key: true|
+|group_id|integer|null: false,foreigin_key: true|
+
+## chat_group
+
+|column|type|key|
+|:--|--:|:--:|
+|name|string|null: false, add_index|
+
+#association
+
+## user
+ has_many :group_user
+ has_many :groups, through: :group_user
+ has_many :messages
+
+## message
+ belongs_to :user
+ belongs_to :group
+
+ ## group_user
+ belongs_to :user
+ belongs_to :group
+
+ ## chat_group
+ has_many :group_users
+ has_many :users, through: :group_user
+ has_many :messages
