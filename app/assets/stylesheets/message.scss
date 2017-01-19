@@ -1,0 +1,197 @@
+// Place all the styles related to the message controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./clearfix";
+@import "./variables";
+
+.chat {
+  @include clearfix();
+  min-width: 980px;
+  height: 700px;
+.chat-top {
+  height: 30px;
+  background-color: $light-blue;
+  p{
+  text-align: center;
+  color: $white;
+  font-size: 16px;
+  }
+}
+
+.chat-side {
+  float: left;
+  height: 100%;
+  width: 300px;
+  background-color: #2f3e51;
+  .chat-user {
+    @include clearfix();
+    height: 65px;
+    padding: 20px;
+    color: $white;
+    background-color: #253141;
+    h5 {
+        float: left;
+        padding-left: 20px;
+        line-height: 60px;
+        font-weight: bold;
+        font-size: 16px;
+        color: $white;
+      }
+  &__actions {
+    float: right;
+  .chat-user__action {
+    display: inline-block;
+    margin: 15px 0 15px 3px;
+    line-height: 28px;
+    color: $white;
+    cursor: pointer;
+   }
+  }
+}
+  .chat-groups {
+    color: $white;
+    padding: 20px 20px;
+  .chat-group {
+    padding: 20px 0;
+    display: block;
+    cursor: pointer;
+  &__name{
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: inline-block;
+      }
+  &__message{
+    overflow: hidden;
+    font-size: 11px;
+    white-space: nowrap;
+    }
+  }
+  }
+}
+
+.chat-main {
+  float: left;
+  position: relative;
+  height: 100%;
+  width: calc(100vw - 300px);
+  .chat-header{
+    @include clearfix();
+    background: $white;
+    padding: 0 40px;
+    border-bottom: 1px solid #eeeeee;
+    &__left {
+      float: left;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      h2 {
+        font-size: 20px;
+        color: #333333;
+        }
+      p{
+        font-size: 12px;
+        color: $black ;
+        }
+  }
+    &__right{
+      float: right;
+      p {
+      display: inline-block;
+      margin: 28px 0;
+      padding: 0 20px;
+      line-height: 40px;
+      color: $light-blue;
+      font-size: 14px;
+      border: 2px solid;
+      cursor: pointer;
+    }
+  }
+}
+
+  .chat-body {
+  position: relative;
+  padding: 30px 0;
+  height: calc(100% - 190px);
+  background-color: #AAAAAA;
+  .chat-messages {
+  position: relative;
+  padding: 0;
+  right: 40px;
+  left: 40px;
+  .chat-message {
+    padding-bottom: 40px;
+    & {
+      line-height: 20px;
+    &__name {
+      float: left;
+      margin-right: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: $gray;
+      }
+    &__time {
+      font-size: 12px;
+      color: $black;
+      }
+    &__body {
+      margin-top: 10px;
+      font-size: 14px;
+      color: $gray;
+         }
+      }
+    }
+  }
+}
+.chat-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px 40px;
+  background-color: #dddddd;
+&__body {
+  font: inherit;
+  float: left;
+  width: calc(100% - 120px);
+  position: relative;
+textarea {
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 15px;
+  font-size: 16px;
+  color: $gray;
+  line-height: 20px;
+  border: none;
+  resize: none;
+  display: block;
+}
+ .chat-footer__file {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+ }
+}
+  &__send-btn {
+    float: right;
+    display: inline-block;
+    margin-left: 15px;
+    line-height: 50px;
+    color: $white;
+    background-color: $light-blue;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+    padding: 0 20px
+      }
+    }
+  }
+}
+
+
+
+
