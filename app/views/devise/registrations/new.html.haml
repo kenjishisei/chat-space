@@ -1,12 +1,11 @@
 #account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
-      %h2 Edit Account
-      %h5 アカウントの編集
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-      = link_to "トップページに戻る", :back, class: 'btn'
+      %h2 Create Account
+      %h5 新規アカウントの作成
+      = render "devise/shared/links"
     .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field
           .field-label
@@ -21,7 +20,7 @@
         .field
           .field-label
             = f.label :password
-            %i (変更したくない場合は、空白のままにしておいてください)
+            %i (英数字8文字以上)
           .field-input
             = f.password_field :password, autocomplete: "off"
         .field
@@ -29,11 +28,5 @@
             = f.label :password_confirmation
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
-        .field
-          .field-label
-            = f.label :current_password
-            %i (変更には現在のパスワードの入力が必要です)
-          .field-input
-            = f.password_field :current_password, autocomplete: "off"
         .actions
-          = f.submit "Update", class: 'btn'
+          = f.submit "Create Account", class: 'btn'
