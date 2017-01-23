@@ -7,7 +7,7 @@
             .chat-user__actions
                 .chat-user__action
                     %i.fa.fa-pencil-square-o
-                =link_to_edit_user_registration_path do
+                = link_to edit_user_registration_path, class: 'chat-user__action' do
                     %i.fa.fa-gear
         .chat-groups
             .chat-group
