@@ -1,0 +1,16 @@
+body {
+.alert {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  color: $white;
+}
+
+.alert-notice {
+  background-color: $light-blue;
+}
+.alert-alert {
+  background-color: $red;
+ }
+}

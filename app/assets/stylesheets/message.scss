@@ -8,17 +8,7 @@
   @include clearfix();
   min-width: 980px;
   height: 700px;
-.chat-top {
-  height: 30px;
-  background-color: $light-blue;
-  p{
-  text-align: center;
-  color: $white;
-  font-size: 16px;
-  }
-}
-
-.chat-side {
+  .chat-side {
   float: left;
   height: 100%;
   width: 300px;
