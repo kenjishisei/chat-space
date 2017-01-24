@@ -75,5 +75,4 @@ ja:
         password_confirmation: "パスワード確認"
         email: "メールアドレス"
     models:
-      user:"ユーザー"
-      
+      user: "ユーザー"
