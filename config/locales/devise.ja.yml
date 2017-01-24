@@ -76,3 +76,4 @@ ja:
         email: "メールアドレス"
     models:
       user:"ユーザー"
+      
