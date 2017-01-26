@@ -1,8 +1,10 @@
+@import "./variables";
+
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
@@ -87,7 +89,7 @@
       cursor: pointer;
 
       &--add {
-        color: #38aef0;
+        color: $light-blue;
       }
 
       &--remove {
@@ -100,7 +102,7 @@
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: $light-blue;
     border: 0;
   }
 }
