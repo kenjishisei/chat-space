@@ -3,7 +3,7 @@
         .chat-user
             %h5 tao
             .chat-user__actions
-                .chat-user__action
+                = link_to new_group_path, class: 'chat-user__action' do
                     %i.fa.fa-pencil-square-o
                 = link_to edit_user_registration_path, class: 'chat-user__action' do
                     %i.fa.fa-gear
