@@ -1,9 +1,10 @@
 .chat
     .chat-side
         .chat-user
-            %h5 tao
+            %h5
+            = current_user.name
             .chat-user__actions
-                .chat-user__action
+                = link_to new_group_path, class: 'chat-user__action' do
                     %i.fa.fa-pencil-square-o
                 = link_to edit_user_registration_path, class: 'chat-user__action' do
                     %i.fa.fa-gear

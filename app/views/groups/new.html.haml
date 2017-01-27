@@ -8,13 +8,13 @@
         = f.text_field :name, class: "chat-group-form__input", id: "chat_group_name", placefolder: "グループ名を入力してください"
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.lebel :チャットメンバー追加, class: "chat-group-form__label"
+        = f.label :チャットメンバー追加, class: "chat-group-form__label"
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
           .chat-group-form__input
-             = f.collection_check_boxes :user_ids, User.all, :id, :name do |b|
+            = f.collection_check_boxes :user_ids, User.all, :id, :name do |b|
               = b.label { b.check_box + b.text}
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        = f.submit "Save", class: "chat-group-form__action-btn", "data-disable-with" : "Save"
+        = f.submit "Save", class: "chat-group-form__action-btn", "data-disable-with"  => "Save"

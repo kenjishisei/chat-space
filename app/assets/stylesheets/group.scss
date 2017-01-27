@@ -1,6 +1,8 @@
 @import "./variables";
+@import "./clearfix";
 
 .chat-group-form {
+  @include clearfix();
   width: 980px;
   margin: 60px auto;
   padding: 40px;
@@ -101,7 +103,7 @@
   .chat-group-form__action-btn {
     display: inline-block;
     padding: 12px 20px;
-    color: #fff;
+    color: $white;
     background-color: $light-blue;
     border: 0;
   }
