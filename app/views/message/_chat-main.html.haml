@@ -1,0 +1,33 @@
+.chat-main
+  .chat-header
+    .chat-header__left
+      %h2
+        = group.name
+      %p.chat-header__users
+        =current_user.name
+    .chat-header__right
+      = link_to edit_group_path(group) do
+        %p.chat-header__edit-btn Edit
+  .chat-body
+    %ul.chat-messages
+      %li.class.chat-message
+        %p.chat-message__name
+          tao
+        %p.chat-message__time
+          2017/01/13 06:17:26
+        %p.chat-message__body
+          疲れた
+      %li.class.chat-message
+      .chat-message__header
+        %p.chat-message__name
+          石田純一
+        %p.chat-message__time
+          2017/01/13 06:17:26
+        %p.chat-message__body
+          死にたい
+  .chat-footer
+    .chat-footer__body
+      %textarea{:placeholder => "type a message"}
+      %label.chat-footer__file
+        %i.fa.fa-image
+    %p.chat-footer__send-btn Send
