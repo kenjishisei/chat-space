@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:show, :edit, :update]
 
   def new
     @group = Group.new
@@ -13,8 +14,28 @@ class GroupsController < ApplicationController
     end
   end
 
+  def show
+    @groups = Group.all
+  end
+
+  def edit
+  end
+
+  def update
+    if @group.update(group_paramas)
+      redirect_to group_path
+    else
+      render :new
+    end
+  end
+
   private
+  
   def group_params
     params.require(:group).permit(:name, user_ids:[])
+    end
+
+    def set_group
+      @group = Group.find(params[:id])
     end
   end
