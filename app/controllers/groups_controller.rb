@@ -1,6 +1,11 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update]
 
+  def index
+    @groups = Group.all
+    @group = Group.first()
+  end
+
   def new
     @group = Group.new
   end
@@ -15,7 +20,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @groups = Group.all
   end
 
   def edit
