@@ -1,8 +1,8 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: %i( edit update)
+  before_action :set_group, only: %i(edit update)
 
   def index
-    @user = User.find(current_user.id)
+    @user = current_user.id
     @groups = Group.all
   end
 
