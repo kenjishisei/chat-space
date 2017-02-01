@@ -27,7 +27,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to group_message_index_path(params[:id]), notice: "アカウント情報を変更しました"
     else
-      falsh[:alert] = "名前を入力してください"
+      flash[:alert] = "名前を入力してください"
       render :new
     end
   end
