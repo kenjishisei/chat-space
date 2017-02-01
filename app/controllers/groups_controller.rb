@@ -1,10 +1,4 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: %i(edit update)
-
-  def index
-    @user = User.find(current_user.id)
-    @groups = @user.groups
-  end
 
   def new
     @group = Group.new
@@ -13,32 +7,14 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path, notice: "チャットグループが作成されました"
+      redirect_to root_path
     else
-      flash[:alert] = "グループ名を入力してください"
-      render :new
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @group.update(group_params)
-      redirect_to group_message_index_path(params[:id]), notice: "アカウント情報を変更しました"
-    else
-      flash[:alert] = "名前を入力してください"
       render :new
     end
   end
 
   private
-
   def group_params
     params.require(:group).permit(:name, user_ids:[])
+    end
   end
-
-  def set_group
-    @group = Group.find(params[:id])
-  end
-end
