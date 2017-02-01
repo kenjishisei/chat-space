@@ -1,0 +1,8 @@
+- groups.each do |group|
+  = link_to group_message_index_path(group) do
+    .chat-groups
+      .chat-group
+        .chat-group__name
+          = group.name
+        .chat-group__message
+          Group message
