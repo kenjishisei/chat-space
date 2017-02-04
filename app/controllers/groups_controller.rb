@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: %i(edit update)
 
   def index
-    @user = User.find(current_user.id)
+    @user = current_user
     @groups = @user.groups
   end
 
@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to group_message_index_path(params[:id]), notice: "アカウント情報を変更しました"
+      redirect_to group_messages_path(@group), notice: "アカウント情報を変更しました"
     else
       flash[:alert] = "名前を入力してください"
       render :new

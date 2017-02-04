@@ -1,0 +1,8 @@
+- group.messages.each do |message|
+  %li.class.chat-message
+    %p.chat-message__name
+      = message.user.name
+    %p.chat-message__time
+      = message.created_at
+    %p.chat-message__body
+      = message.body
