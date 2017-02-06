@@ -5,7 +5,7 @@ describe Message do
     it "is invalid without a body" do
       message = build(:message, body: "")
       message.valid?
-      expect(message.errors[:body]).to include("can't be blanc")
+      expect(message.errors[:body]).to include("入力されていません")
     end
 
     it "is valid with a body" do
