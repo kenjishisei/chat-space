@@ -5,4 +5,9 @@ class Group < ApplicationRecord
   has_many :messages
 
   accepts_nested_attributes_for :group_users
+
+  def new_message?
+    messages.blank? ? "まだメッセージはありません。" : messages.last[:body] ;
+  end
+
 end
