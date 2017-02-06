@@ -6,7 +6,7 @@ class Group < ApplicationRecord
 
   accepts_nested_attributes_for :group_users
 
-  def group_non_message
+  def new_message
     messages.blank? ? "まだメッセージはありません。" : messages.last[:body] ;
   end
 
