@@ -4,7 +4,8 @@
       %h2
         = group.name
       %p.chat-header__users
-        = group.users.pluck(:name)
+        - @group.users.each do |user|
+          = user.name
     .chat-header__right
       = link_to edit_group_path(group) do
         %p.chat-header__edit-btn Edit
