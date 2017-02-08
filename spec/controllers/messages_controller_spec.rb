@@ -10,10 +10,9 @@ describe MessagesController do
   end
 
   describe 'GET #index' do
-
     it "renders the :index template" do
-    get:index, group_id: group
-    expect(response).to render_template :index
+      get:index, group_id: group
+      expect(response).to render_template :index
     end
 
     it "assigns the requested group to @group" do
