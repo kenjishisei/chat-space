@@ -36,7 +36,8 @@
   }
 }
   .chat-groups {
-    overflow: scroll;
+    height: ¶20px;
+    overflow-y: scroll;
     color: $white;
     padding: 20px 20px;
   .chat-group {
@@ -100,7 +101,7 @@
   padding: 30px 0;
   height: calc(100% - 190px);
   background-color: #AAAAAA;
-  overflow: scroll;
+  overflow-y: scroll;
   .chat-messages {
   position: relative;
   padding: 0;

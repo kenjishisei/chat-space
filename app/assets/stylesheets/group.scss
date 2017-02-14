@@ -2,7 +2,6 @@
 @import "./clearfix";
 
 .chat-group-form {
-  @include clearfix();
   width: 980px;
   margin: 60px auto;
   padding: 40px;
@@ -12,6 +11,7 @@
   box-sizing: border-box;
 
   h1 {
+    font-weight: bold;
     letter-spacing: 2px;
     font-size: 24px;
     text-align: center;
@@ -43,11 +43,13 @@
     }
   }
 
-  &__field {
+  .chat-group-form__field {
+    @include clearfix();
     margin-top: 30px;
 
     &--left {
       float: left;
+      font-weight: bold;
       width: 30%;
       padding-right: 20px;
       padding-left: 20px;
@@ -59,21 +61,36 @@
       width: 70%;
     }
 
-    &__label {
+  .chat-group-form__label {
       display: block;
       line-height: 50px;
       font-weight: bold;
       text-align: right;
     }
 
-    &__input {
+    .chat-group-form__input {
       float: left;
       width: 100%;
       line-height: 30px;
       padding: 10px 15px;
       box-sizing: border-box;
     }
+
+  .chat-group-user {
+    @include clearfix();
+    border-bottom: 1px solid #ddd;
+    line-height: 50px;
+    font-size: 14px;
+    a{
+      float: right;
+      color: $light-blue;
+      cursor: pointer;
+    }
+    #chat-group-user__delete-button {
+      color: red;
+    }
   }
+}
 
   .chat-group-user {
     padding: 0 15px;
@@ -81,11 +98,11 @@
     font-size: 14px;
     border-bottom: 1px solid #ddd;
 
-    &__name {
+    .chat-group-user__name {
       float: left;
     }
 
-    &__btn {
+    .chat-user-group__btn {
       float: right;
       display: inline-block;
       cursor: pointer;
