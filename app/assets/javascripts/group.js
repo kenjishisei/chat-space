@@ -6,10 +6,10 @@ $(function() {
         '<p class= "chat-group-user__name">' +
             user.name +
         '</p>' +
-        '<a id="chat-group-user__add-button" user_name="'+ user.name + '"user_id"' + user.id +'">追加</a>' +
+        '<a id="chat-group-user__add-button" data-user_name="'+ user.name + '"data-user_id"' + user.id +'">追加</a>' +
       '</div>';
-      return html
- }
+  return html
+  }
  //追加したユーザーを表示していく関数
  function buildAddedUserHTML(name, id) {
    var html =
@@ -21,7 +21,7 @@ $(function() {
       '<a id="chat-group-user__delete-button">削除</a>' +
     '</div>';
   return html
- }
+  }
 
  //ユーザー検索
 $('#user-search-form').keyup(function() {
