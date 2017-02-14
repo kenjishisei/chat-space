@@ -33,7 +33,6 @@ $('#user-search-form').keyup(function() {
     data: { name: word },
     dataType: 'json'
   })
-
   .done(function(users) {
     if(word.length != 0){
       var insertHTML = '';
