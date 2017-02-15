@@ -1,35 +1,46 @@
 $(function() {
   function buildHTML(message) {
-    var user_name = $('<p class = "chat-message__name">').append(message.name);
-    var message_time = $('<p class = "chat-message__time">').append(message.time);
-    var message_body = $('<p class = "chat-message__body">').append(message.body);
-    var html = $('<li class = "chat-message">').append(user_name, message_time, message_body);
-    return html;
-  }
+    var html =
+    '<li class="chat-message">' +
+      '<p class="chat-message__name">' +
+          message.name +
+      '</p>' +
+      '<p class="chat-message__time">' +
+          message.time +
+      '</p>' +
+      '<p class="chat-message__body">' +
+          message.body +
+      '</p>' +
+      '<br>' +
+      '<img class="chat-message__image">' +
+          message.image +
+      '</img>' +
+    '</li>'
+      return html;
+    }
 
-  $('.chat-footer').on('submit', function(e) {
+  $('#new_message').on('submit', function(e) {
     e.preventDefault();
 
+    var $this = $(this);
     var form = $('.new_message');
 
-    var textField = $('#message_body');
-    var message = textField.val();
+    var fd = new FormData($this.get(0));
 
     $.ajax({
       type: form.attr('method'),
       url: form.attr('action'),
-      data: {
-        message: {
-          body: message
-        }
-      },
+      data: fd,
+      contentType : false,
+      processData : false,
       dataType: 'json'
     })
 
     .done(function(data) {
       var html = buildHTML(data.message);
       $('.messages').append(html);
-      textField.val('');
+      $this.val('');
+      scrollToBottom();
     })
     .fail(function() {
       alert('error');
