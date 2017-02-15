@@ -164,6 +164,12 @@ textarea {
   line-height: 50px;
   text-align: center;
   cursor: pointer;
+  input {
+    display: none;
+  }
+  i {
+    cursor: pointer;
+  }
  }
 }
   &__send-btn {
