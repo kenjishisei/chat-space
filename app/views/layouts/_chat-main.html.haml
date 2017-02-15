@@ -18,4 +18,5 @@
         .chat-footer__body__file
           = f.label :image do
             %i.fa.fa-image
+              = f.file_field :image
       = f.submit "Send",class: "chat-footer__send-btn", "data-disable-with": "Save"
