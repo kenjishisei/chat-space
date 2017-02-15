@@ -11,7 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
-
+/public/uploads
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -20,5 +20,6 @@
 /.bundle
 /vendor/bundle/
 /vendor/ruby/
+
 
 
