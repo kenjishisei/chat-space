@@ -8,5 +8,5 @@
       = message.body
       - if message.image?
         %br
-        %p.chat-message__image
+        .chat-message__image
           = image_tag message.image.to_s

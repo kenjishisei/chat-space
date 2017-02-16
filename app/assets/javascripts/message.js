@@ -6,7 +6,7 @@ $(function() {
        <p class="chat-message__time"> message.time </p>
        <p class="chat-message__body"> message.body </p>
        <br>
-       <p class="chat-message__image"> message.image </p>
+       <div class="chat-message__image"> message.image </div>
      </li>`;
       return html;
     }
