@@ -6,3 +6,7 @@
       = message.created_at
     %p.chat-message__body
       = message.body
+      - if message.image?
+        %br
+        .chat-message__image
+          = image_tag message.image.to_s
