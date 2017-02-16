@@ -15,7 +15,7 @@ $(function() {
       '<img class="chat-message__image">' +
           message.image +
       '</img>' +
-    '</li>'
+    '</li>';
       return html;
     }
 
@@ -24,7 +24,6 @@ $(function() {
 
     var $this = $(this);
     var form = $('.new_message');
-
     var fd = new FormData($this.get(0));
 
     $.ajax({
