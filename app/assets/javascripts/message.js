@@ -32,7 +32,7 @@ $(function() {
 
     var $this = $(this);
     var form = $('.new_message');
-    var fd = new FormData($this.get(0);
+    var fd = new FormData($this.get(0));
 
     $.ajax({
       type: form.attr('method'),
