@@ -18,7 +18,7 @@ $(function() {
     }
 
     function autoScroll() {
-      $('.chat-body').scrollTop( $('.chat-messages').height();
+      $('.chat-body').scrollTop( $('.chat-messages').height());
     }
 
     $('.chat-footer__body__image').on('change', function() {
@@ -52,5 +52,22 @@ $(function() {
     .fail(function() {
       alert('error');
     });
-  });
+    return false;
 });
+
+      setInterval(reload, 1000)
+      function reload (){
+        $.ajax({
+          type: 'GET',
+          url: form.attr('action'),
+          dataType: 'json'
+        })
+        .done(function(message){
+          $('.chat-message').remove();
+          messages.forEach(function(message){
+            insertHTML += buildHTML(message);
+          });
+          $('.chat-messages').append(insertHTML)
+        });
+       };
+      });
